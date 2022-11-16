@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="300">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/descObject"
+               motion:framePosition="40"
+               android:alpha="0.6" />
+           <KeyAttribute
+               motion:motionTarget="@+id/descObject"
+               motion:framePosition="100"
+               android:alpha="1.0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/descObject"
+               motion:framePosition="0"
+               android:alpha="0" />
+       </KeyFrameSet>
+        <OnClick motion:targetId="@+id/nameObject" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/descObject"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            motion:layout_constraintTop_toBottomOf="@+id/categoryObject" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/editObjectButton5"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toEndOf="@+id/statusObject"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp"
+            android:visibility="invisible" />
+        <Constraint
+            android:layout_height="47dp"
+            android:layout_width="138dp"
+            motion:layout_constraintStart_toEndOf="@+id/editObjectButton5"
+            android:id="@+id/deleteObjectButton3"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:visibility="invisible" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/descObject"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            motion:layout_editor_absoluteY="55dp" />
+        <Constraint
+            android:id="@+id/descObject"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            motion:layout_constraintTop_toBottomOf="@+id/categoryObject"
+            motion:layout_editor_absoluteY="55dp" />
+        <Constraint
+            android:layout_height="30dp"
+            android:layout_width="0dp"
+            motion:layout_constraintTop_toBottomOf="@+id/descObject"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintLeft_toRightOf="parent"
+            android:id="@+id/statusObject" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:id="@+id/editObjectButton5"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toEndOf="@+id/statusObject" />
+        <Constraint
+            android:layout_height="50dp"
+            android:layout_width="146dp"
+            motion:layout_constraintStart_toEndOf="@+id/editObjectButton5"
+            android:id="@+id/deleteObjectButton3"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+    </ConstraintSet>
+</MotionScene>

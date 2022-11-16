@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Rfid-mobile</string>
+    <string name="lessSymbol"><![CDATA[<]]></string>
+    <string name="greaterSymbol"><![CDATA[>]]></string>
+</resources>
